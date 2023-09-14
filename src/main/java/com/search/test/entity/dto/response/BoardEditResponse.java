@@ -1,2 +1,8 @@
-package com.search.test.entity.dto.response;public class BoardEditResponse {
+package com.search.test.entity.dto.response;
+
+import lombok.Data;
+
+@Data
+public class BoardEditResponse {
+
 }
