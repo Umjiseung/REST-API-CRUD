@@ -30,9 +30,8 @@ public class UserController {
 
     // 게시물 보기
     @GetMapping("/detail/{id}")
-    public ResponseEntity<List<BoardGetResponse>> seeBoard(@PathVariable("id") Long id, BoardSeeResponse boardSeeResponse) {
-        return new ResponseEntity<>(userService.boardEdit(boardSeeResponse),HttpStatus.OK);
-    }
+    public ResponseEntity<List<BoardSeeResponse>> seeBoard(@PathVariable("id") Long id, BoardSeeResponse boardSeeResponse) {
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
 
     //게시물 수정
     //@PutMapping("/modify/{id}")

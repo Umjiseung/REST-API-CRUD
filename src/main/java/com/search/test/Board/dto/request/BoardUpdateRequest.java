@@ -1,4 +1,4 @@
-package com.search.test.dto.request;
+package com.search.test.Board.dto.request;
 
 import lombok.Data;
 
