@@ -8,4 +8,10 @@ public class BoardCreateResponse {
     private String id;
     private String about;
 
+    public BoardCreateResponse(String name, String id, String about) {
+        this.name = name;
+        this.id = id;
+        this.about = about;
+    }
+
 }
