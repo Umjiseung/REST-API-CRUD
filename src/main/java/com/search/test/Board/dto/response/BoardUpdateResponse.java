@@ -3,12 +3,12 @@ package com.search.test.Board.dto.response;
 import lombok.Data;
 
 @Data
-public class BoardEditResponse {
+public class BoardUpdateResponse {
     private String name;
     private String id;
     private String about;
 
-    public BoardEditResponse(String name, String id, String about) {
+    public BoardUpdateResponse(String name, String id, String about) {
         this.name = name;
         this.id = id;
         this.about = about;
