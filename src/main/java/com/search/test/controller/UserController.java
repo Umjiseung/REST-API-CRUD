@@ -1,14 +1,19 @@
 package com.search.test.controller;
 
 
-import com.search.test.entity.dto.request.BoardCreateRequest;
-import com.search.test.entity.dto.response.BoardCreateResponse;
+import com.search.test.dto.request.BoardCreateRequest;
+import com.search.test.dto.request.BoardEditRequest;
+import com.search.test.dto.response.BoardCreateResponse;
+import com.search.test.dto.response.BoardGetResponse;
+import com.search.test.dto.response.BoardSeeResponse;
 import com.search.test.service.UserService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -17,10 +22,24 @@ public class UserController {
 
     private final UserService userService;
 
+    // 게시물 작성
     @PostMapping("/write")
-    public BoardCreateResponse writeBoard(@RequestBody BoardCreateRequest boardCreateRequest) {
-        return UserService.boardSave(boardCreateRequest);
+    public ResponseEntity<BoardCreateResponse> writeBoard(@RequestBody BoardCreateRequest boardCreateRequest) {
+        return new ResponseEntity<>(userService.boardSave(boardCreateRequest), HttpStatus.CREATED);
     }
+
+    // 게시물 보기
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<List<BoardGetResponse>> seeBoard(@PathVariable("id") Long id, BoardSeeResponse boardSeeResponse) {
+        return new ResponseEntity<>(userService.boardEdit(boardSeeResponse),HttpStatus.OK);
+    }
+
+    //게시물 수정
+    //@PutMapping("/modify/{id}")
+
+
+    //게시물 삭제
+    //@DeleteMapping("/delate/{id}")
 
 
 }

@@ -1,4 +1,4 @@
-package com.search.test.entity.dto.response;
+package com.search.test.dto.response;
 
 import lombok.Data;
 
