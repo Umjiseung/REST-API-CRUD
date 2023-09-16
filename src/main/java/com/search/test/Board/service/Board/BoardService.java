@@ -3,6 +3,7 @@ package com.search.test.Board.service.Board;
 import com.search.test.Board.dto.Board.request.BoardCreateRequest;
 import com.search.test.Board.dto.Board.response.BoardCreateResponse;
 import com.search.test.Board.dto.Board.response.BoardGetResponse;
+import com.search.test.Board.dto.Board.response.BoardInfoResponse;
 import com.search.test.Board.entity.Board.Board;
 import com.search.test.Board.repository.Board.BoardRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -31,15 +33,19 @@ public class BoardService {
         return boardCreateResponse;
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<BoardGetResponse> boardGets() {
-
+        return boardRepository.findAll().stream()
+                .map(b -> new BoardGetResponse(b.getId(), b.getName(), b.getAbout()))
+                .collect(Collectors.toList());
     }
 
 
     @Transactional(readOnly = true)
-    public List<BoardGetResponse> boardGet() {
-
+    public BoardInfoResponse boardGet(Long id) {
+        Board board = boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        BoardInfoResponse boardInfoResponse = new BoardInfoResponse(board.getId(),board.getName(),board.getAbout());
+        return boardInfoResponse;
     }
 
 
@@ -49,5 +55,8 @@ public class BoardService {
         boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         boardRepository.deleteById(id);
     }
+
+
+
 
 }
