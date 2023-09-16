@@ -31,7 +31,7 @@ public class BoardController {
 
     // 게시물 모두 가져오기
     @GetMapping("/{id}")
-    public ResponseEntity<List<BoardGetResponse>> getBoards(@PathVariable("id") BoardGetRequest boardGetRequest) {
+    public ResponseEntity<List<BoardGetResponse>> getBoards(@PathVariable("id") Long id) {
         return new ResponseEntity<>(boardService.boardGets(), HttpStatus.OK);
     }
 

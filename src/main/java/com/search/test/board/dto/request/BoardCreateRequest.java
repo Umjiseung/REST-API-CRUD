@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-@Builder
 public class BoardCreateRequest {
     private Long id;
 

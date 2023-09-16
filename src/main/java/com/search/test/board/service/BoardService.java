@@ -1,6 +1,7 @@
 package com.search.test.board.service;
 
 import com.search.test.board.dto.request.BoardCreateRequest;
+import com.search.test.board.dto.request.BoardGetRequest;
 import com.search.test.board.dto.request.BoardUpdateRequest;
 import com.search.test.board.dto.response.BoardCreateResponse;
 import com.search.test.board.dto.response.BoardGetResponse;
@@ -12,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,9 +39,15 @@ public class BoardService {
 
     @Transactional(readOnly = true)
     public List<BoardGetResponse> boardGets() {
-        return boardRepository.findAll().stream()
-                .map(b -> new BoardGetResponse(b.getId(), b.getName(), b.getAbout()))
-                .collect(Collectors.toList());
+        List<Board> boards = boardRepository.findAll();
+        List<BoardGetResponse> boardGetResponses = new ArrayList<>();
+
+        for (Board board : boards) {
+            boardGetResponses.add(new BoardGetResponse(board.getId(), board.getName(), board.getAbout()));
+
+        }
+
+        return boardGetResponses;
     }
 
 

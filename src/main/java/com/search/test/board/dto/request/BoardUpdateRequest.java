@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-@Builder
+
 public class BoardUpdateRequest {
 
     private String name;
