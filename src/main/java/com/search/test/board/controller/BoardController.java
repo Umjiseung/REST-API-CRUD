@@ -1,12 +1,12 @@
-package com.search.test.Board.controller.Board;
+package com.search.test.board.controller;
 
 
-import com.search.test.Board.dto.Board.request.BoardCreateRequest;
-import com.search.test.Board.dto.Board.request.BoardGetRequest;
-import com.search.test.Board.dto.Board.response.BoardCreateResponse;
-import com.search.test.Board.dto.Board.response.BoardGetResponse;
-import com.search.test.Board.dto.Board.response.BoardInfoResponse;
-import com.search.test.Board.service.Board.BoardService;
+import com.search.test.board.dto.request.BoardCreateRequest;
+import com.search.test.board.dto.request.BoardGetRequest;
+import com.search.test.board.dto.response.BoardCreateResponse;
+import com.search.test.board.dto.response.BoardGetResponse;
+import com.search.test.board.dto.response.BoardInfoResponse;
+import com.search.test.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

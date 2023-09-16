@@ -1,11 +1,11 @@
-package com.search.test.Board.service.Board;
+package com.search.test.board.service;
 
-import com.search.test.Board.dto.Board.request.BoardCreateRequest;
-import com.search.test.Board.dto.Board.response.BoardCreateResponse;
-import com.search.test.Board.dto.Board.response.BoardGetResponse;
-import com.search.test.Board.dto.Board.response.BoardInfoResponse;
-import com.search.test.Board.entity.Board.Board;
-import com.search.test.Board.repository.Board.BoardRepository;
+import com.search.test.board.dto.request.BoardCreateRequest;
+import com.search.test.board.dto.response.BoardCreateResponse;
+import com.search.test.board.dto.response.BoardGetResponse;
+import com.search.test.board.dto.response.BoardInfoResponse;
+import com.search.test.board.entity.Board;
+import com.search.test.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

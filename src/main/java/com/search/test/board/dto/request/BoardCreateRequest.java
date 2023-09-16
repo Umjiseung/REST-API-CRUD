@@ -1,12 +1,10 @@
-package com.search.test.Board.dto.Board.request;
+package com.search.test.board.dto.request;
 
 import lombok.Data;
 
-
 @Data
-public class BoardGetRequest {
+public class BoardCreateRequest {
     private String id;
     private String name;
     private String about;
-
 }

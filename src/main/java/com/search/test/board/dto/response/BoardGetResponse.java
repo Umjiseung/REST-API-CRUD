@@ -1,14 +1,14 @@
-package com.search.test.Board.dto.Board.response;
+package com.search.test.board.dto.response;
 
 import lombok.Data;
 
 @Data
-public class BoardInfoResponse {
+public class BoardGetResponse {
     private String id;
     private String name;
     private String about;
 
-    public BoardInfoResponse(String id, String name, String about) {
+    public BoardGetResponse(String id, String name, String about) {
         this.id = id;
         this.name = name;
         this.about = about;
