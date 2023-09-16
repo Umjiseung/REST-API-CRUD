@@ -23,6 +23,8 @@ public class BoardController {
 
     private final BoardService boardService;
 
+
+
     // 게시물 작성
     @PostMapping("/write")
     public ResponseEntity<BoardCreateResponse> writeBoard(@RequestBody BoardCreateRequest boardCreateRequest) {
@@ -30,8 +32,8 @@ public class BoardController {
     }
 
     // 게시물 모두 가져오기
-    @GetMapping("/{id}")
-    public ResponseEntity<List<BoardGetResponse>> getBoards(@PathVariable("id") Long id) {
+    @GetMapping
+    public ResponseEntity<List<BoardGetResponse>> getBoards() {
         return new ResponseEntity<>(boardService.boardGets(), HttpStatus.OK);
     }
 
@@ -45,14 +47,14 @@ public class BoardController {
     //게시물 삭제
     @DeleteMapping("/delate/{id}")
     public ResponseEntity<Void> delateBoard(@PathVariable("id") Long id) {
-        boardService.boardDelate(id);
+        boardService.boardDelete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 
     //게시물 수정
-    @PutMapping("/modify/{id}")
-    public ResponseEntity<BoardUpdateResponse> updateBoard(@PathVariable("id") @RequestBody BoardUpdateRequest boardUpdateRequest) {
+    @PutMapping("/modify")
+    public ResponseEntity<BoardUpdateResponse> updateBoard(@RequestBody BoardUpdateRequest boardUpdateRequest) {
         boardService.boardUpdate(boardUpdateRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

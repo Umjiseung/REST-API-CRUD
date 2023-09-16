@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -59,12 +60,12 @@ public class BoardService {
     }
 
 
-
     @Transactional
-    public void boardDelate(Long id) {
-        boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
-        boardRepository.deleteById(id);
+    public void boardDelete(Long id) {
+        Board board = boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        boardRepository.delete(board);
     }
+
 
 
     @Transactional
