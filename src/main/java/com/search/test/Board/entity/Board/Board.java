@@ -1,4 +1,4 @@
-package com.search.test.Board.entity;
+package com.search.test.Board.entity.Board;
 
 import lombok.*;
 

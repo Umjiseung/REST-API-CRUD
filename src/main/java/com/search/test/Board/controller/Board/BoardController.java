@@ -1,11 +1,11 @@
-package com.search.test.Board.controller;
+package com.search.test.Board.controller.Board;
 
 
-import com.search.test.Board.dto.request.BoardCreateRequest;
-import com.search.test.Board.dto.request.BoardGetRequest;
-import com.search.test.Board.dto.response.BoardCreateResponse;
-import com.search.test.Board.dto.response.BoardGetResponse;
-import com.search.test.Board.service.UserService;
+import com.search.test.Board.dto.Board.request.BoardCreateRequest;
+import com.search.test.Board.dto.Board.request.BoardGetRequest;
+import com.search.test.Board.dto.Board.response.BoardCreateResponse;
+import com.search.test.Board.dto.Board.response.BoardGetResponse;
+import com.search.test.Board.service.Board.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +16,9 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/users")
-public class UserController {
+public class BoardController {
 
-    private final UserService userService;
+    private final BoardService userService;
 
     // 게시물 작성
     @PostMapping("/write")
