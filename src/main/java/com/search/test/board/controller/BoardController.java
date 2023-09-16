@@ -2,7 +2,6 @@ package com.search.test.board.controller;
 
 
 import com.search.test.board.dto.request.BoardCreateRequest;
-import com.search.test.board.dto.request.BoardGetRequest;
 import com.search.test.board.dto.request.BoardUpdateRequest;
 import com.search.test.board.dto.response.BoardCreateResponse;
 import com.search.test.board.dto.response.BoardGetResponse;

@@ -1,22 +1,17 @@
 package com.search.test.board.service;
 
 import com.search.test.board.dto.request.BoardCreateRequest;
-import com.search.test.board.dto.request.BoardGetRequest;
 import com.search.test.board.dto.request.BoardUpdateRequest;
 import com.search.test.board.dto.response.BoardCreateResponse;
 import com.search.test.board.dto.response.BoardGetResponse;
 import com.search.test.board.dto.response.BoardInfoResponse;
-import com.search.test.board.dto.response.BoardUpdateResponse;
 import com.search.test.board.entity.Board;
 import com.search.test.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 @Service
