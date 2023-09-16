@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Builder
 public class BoardCreateRequest {
-    private String id;
+    private Long id;
 
     private String name;
 

@@ -12,7 +12,7 @@ public class BoardUpdateRequest {
 
     private String name;
 
-    private String id;
+    private Long id;
 
     private String about;
 

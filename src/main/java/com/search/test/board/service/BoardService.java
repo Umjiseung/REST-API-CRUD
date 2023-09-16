@@ -1,9 +1,11 @@
 package com.search.test.board.service;
 
 import com.search.test.board.dto.request.BoardCreateRequest;
+import com.search.test.board.dto.request.BoardUpdateRequest;
 import com.search.test.board.dto.response.BoardCreateResponse;
 import com.search.test.board.dto.response.BoardGetResponse;
 import com.search.test.board.dto.response.BoardInfoResponse;
+import com.search.test.board.dto.response.BoardUpdateResponse;
 import com.search.test.board.entity.Board;
 import com.search.test.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +31,7 @@ public class BoardService {
         content.setName(boardCreateRequest.getName());
         content.setAbout(boardCreateRequest.getAbout());
         content = boardRepository.save(content);
-        BoardCreateResponse boardCreateResponse = new BoardCreateResponse(content.getId(),content.getName(),content.getAbout());
+        BoardCreateResponse boardCreateResponse = new BoardCreateResponse(content.getName(),content.getId(),content.getAbout());
         return boardCreateResponse;
     }
 
@@ -56,6 +58,14 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 
+
+    @Transactional
+    public void boardUpdate(BoardUpdateRequest boardUpdateRequest) {
+        Board board = boardRepository.findById(boardUpdateRequest.getId()).orElseThrow(IllegalArgumentException::new);
+        board.setName(boardUpdateRequest.getName());
+        board.setAbout(boardUpdateRequest.getAbout());
+        boardRepository.save(board);
+    }
 
 
 

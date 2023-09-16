@@ -10,11 +10,11 @@ import lombok.RequiredArgsConstructor;
 @Builder
 public class BoardUpdateResponse {
     private String name;
-    private String id;
+    private Long id;
     private String about;
 
 
-    public BoardUpdateResponse(String name, String id, String about) {
+    public BoardUpdateResponse(String name, Long id, String about) {
         this.name = name;
         this.id = id;
         this.about = about;

@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Builder
 public class BoardGetRequest {
-    private String id;
+    private Long id;
     private String name;
     private String about;
 
