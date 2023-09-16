@@ -24,12 +24,13 @@ public class BoardService {
 
     @Transactional
     public BoardCreateResponse boardCreate(BoardCreateRequest boardCreateRequest) {
+        if (boardCreateRequest.getName().isBlank() || boardCreateRequest.getAbout().isBlank()) throw new IllegalArgumentException("작성되지 않아 예외가 발생했습니다.");
         Board content = new Board();
         content.setId(boardCreateRequest.getId());
         content.setName(boardCreateRequest.getName());
         content.setAbout(boardCreateRequest.getAbout());
         content = boardRepository.save(content);
-        BoardCreateResponse boardCreateResponse = new BoardCreateResponse(content.getName(),content.getId(),content.getAbout());
+        BoardCreateResponse boardCreateResponse = new BoardCreateResponse(content.getId(),content.getName(),content.getAbout());
         return boardCreateResponse;
     }
 
@@ -40,9 +41,7 @@ public class BoardService {
 
         for (Board board : boards) {
             boardGetResponses.add(new BoardGetResponse(board.getId(), board.getName(), board.getAbout()));
-
         }
-
         return boardGetResponses;
     }
 
