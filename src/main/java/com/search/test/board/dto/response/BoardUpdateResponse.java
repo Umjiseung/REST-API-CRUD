@@ -13,6 +13,7 @@ public class BoardUpdateResponse {
     private String id;
     private String about;
 
+
     public BoardUpdateResponse(String name, String id, String about) {
         this.name = name;
         this.id = id;

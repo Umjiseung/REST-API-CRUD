@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Builder
 public class BoardCreateResponse {
+
     private String name;
     private String id;
     private String about;

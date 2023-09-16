@@ -13,6 +13,7 @@ public class BoardGetResponse {
     private String name;
     private String about;
 
+
     public BoardGetResponse(String id, String name, String about) {
         this.id = id;
         this.name = name;
