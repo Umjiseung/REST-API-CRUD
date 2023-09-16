@@ -1,9 +1,14 @@
 package com.search.test.board.dto.request;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 
-@Data
+@Getter
+@RequiredArgsConstructor
+@Builder
 public class BoardGetRequest {
     private String id;
     private String name;
