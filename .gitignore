@@ -36,4 +36,7 @@ out/
 ### VS Code ###
 .vscode/
 
+##jwt##
+application.yml
+
 
