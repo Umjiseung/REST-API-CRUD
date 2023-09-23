@@ -30,8 +30,7 @@ public class BoardService {
         content.setName(boardCreateRequest.getName());
         content.setAbout(boardCreateRequest.getAbout());
         content = boardRepository.save(content);
-        BoardCreateResponse boardCreateResponse = new BoardCreateResponse(content.getId(),content.getName(),content.getAbout());
-        return boardCreateResponse;
+        return new BoardCreateResponse(content.getId(),content.getName(),content.getAbout());
     }
 
     @Transactional(readOnly = true)
@@ -49,8 +48,7 @@ public class BoardService {
     @Transactional(readOnly = true)
     public BoardInfoResponse boardGet(Long id) {
         Board board = boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
-        BoardInfoResponse boardInfoResponse = new BoardInfoResponse(board.getId(),board.getName(),board.getAbout());
-        return boardInfoResponse;
+        return new BoardInfoResponse(board.getId(),board.getName(),board.getAbout());
     }
 
 
