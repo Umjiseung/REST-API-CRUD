@@ -51,7 +51,7 @@ public class BoardController {
 
 
     //게시물 수정
-    @PutMapping("/modify")
+    @PutMapping("/update")
     public ResponseEntity<BoardUpdateResponse> updateBoard(@RequestBody BoardUpdateRequest boardUpdateRequest) {
         boardService.boardUpdate(boardUpdateRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);

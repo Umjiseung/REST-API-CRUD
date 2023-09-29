@@ -10,10 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
     private UserService userService;
 
-    @Transactional
-    public Void regist(RegisterRequest<V> registerRequest) {
-
-    }
+//    @Transactional
+//    public Void regist(RegisterRequest registerRequest) {
+//
+//    }
 
 
 }

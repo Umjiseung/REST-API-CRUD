@@ -52,7 +52,7 @@ public class BoardService {
     }
 
 
-    @Transactional
+    @Transactional(readOnly = true)
     public void boardDelete(Long id) {
         Board board = boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         boardRepository.delete(board);
@@ -60,7 +60,7 @@ public class BoardService {
 
 
 
-    @Transactional
+    @Transactional 
     public void boardUpdate(BoardUpdateRequest boardUpdateRequest) {
         Board board = boardRepository.findById(boardUpdateRequest.getId()).orElseThrow(IllegalArgumentException::new);
         board.setName(boardUpdateRequest.getName());
