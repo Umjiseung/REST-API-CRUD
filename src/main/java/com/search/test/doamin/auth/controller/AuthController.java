@@ -28,14 +28,14 @@ public class AuthController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/logout")
-    public ResponseEntity<Void> logout(){
-
-    }
-
-    @PutMapping("/refresh")
-    public ResponseEntity<> refresh() {
-
-    }
+//    @PutMapping("/logout")
+//    public ResponseEntity<Void> logout(){
+//
+//    }
+//
+//    @PutMapping("/refresh")
+//    public ResponseEntity<> refresh() {
+//
+//    }
 
 }
