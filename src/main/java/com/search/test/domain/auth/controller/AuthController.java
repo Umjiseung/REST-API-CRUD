@@ -16,26 +16,26 @@ public class AuthController {
 
     private final AuthService authService;
 
-    @PostMapping("/register")
-    public ResponseEntity<Void> register(@RequestBody RegisterRequest registerRequest) {
-        authService.register(registerRequest);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<Void> register(@RequestBody RegisterRequest registerRequest) {
+//        authService.register(registerRequest);
+//        return new ResponseEntity<>(HttpStatus.CREATED);
+//    }
+//
+//    @PostMapping("/login")
+//    public ResponseEntity<Void> login(@RequestBody LoginRequest loginRequest) {
+//        authService.login(loginRequest);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
-    @PostMapping("/login")
-    public ResponseEntity<Void> login(@RequestBody LoginRequest loginRequest) {
-        authService.login(loginRequest);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    @PutMapping("/logout")
-    public ResponseEntity<Void> logout(){
-
-    }
-
-    @PutMapping("/refresh")
-    public ResponseEntity<> refresh() {
-
-    }
+//    @PutMapping("/logout")
+//    public ResponseEntity<Void> logout(){
+//
+//    }
+//
+//    @PutMapping("/refresh")
+//    public ResponseEntity<> refresh() {
+//
+//    }
 
 }
