@@ -1,7 +1,9 @@
 spring:
     datasource:
        driver-class-name: org.postgresql.Driver
-       url: ${DB_URL}/neondb?user=${DB_USER}&password=${DB_PASSWORD}
+       url: ${DB_URL}g
+       username: ${DB_USER}
+       password: ${DB_PASSWORD}
     jpa:
         hibernate:
             dialect: org.hibernate.dialect.PostgreSQLDialect
