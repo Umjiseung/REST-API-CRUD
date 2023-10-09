@@ -43,15 +43,15 @@ public class BoardController {
 
 
     //게시물 삭제
-    @DeleteMapping("/delate/{id}")
-    public ResponseEntity<Void> delateBoard(@PathVariable("id") Long id) {
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteBoard(@PathVariable("id") Long id) {
         boardService.boardDelete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 
     //게시물 수정
-    @PutMapping("/update")
+    @PutMapping("/modify")
     public ResponseEntity<BoardUpdateResponse> updateBoard(@RequestBody BoardUpdateRequest boardUpdateRequest) {
         boardService.boardUpdate(boardUpdateRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
