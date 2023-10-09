@@ -1,21 +1,21 @@
-package com.search.test.domain.auth.controller;
-
-
-import com.search.test.domain.auth.data.dto.request.LoginRequest;
-import com.search.test.domain.auth.data.dto.request.RegisterRequest;
-import com.search.test.domain.auth.service.AuthService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-@RequiredArgsConstructor
-@RequestMapping("/auth")
-public class AuthController {
-
-    private final AuthService authService;
-
+//package com.search.test.domain.auth.controller;
+//
+//
+//import com.search.test.domain.auth.data.dto.request.LoginRequest;
+//import com.search.test.domain.auth.data.dto.request.RegisterRequest;
+//import com.search.test.domain.auth.service.AuthService;
+//import lombok.RequiredArgsConstructor;
+//import org.springframework.http.HttpStatus;
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.web.bind.annotation.*;
+//
+//@RestController
+//@RequiredArgsConstructor
+//@RequestMapping("/auth")
+//public class AuthController {
+//
+//    private final AuthService authService;
+//
 //    @PostMapping("/register")
 //    public ResponseEntity<Void> register(@RequestBody RegisterRequest registerRequest) {
 //        authService.register(registerRequest);
@@ -27,7 +27,7 @@ public class AuthController {
 //        authService.login(loginRequest);
 //        return new ResponseEntity<>(HttpStatus.OK);
 //    }
-
+//
 //    @PutMapping("/logout")
 //    public ResponseEntity<Void> logout(){
 //
@@ -37,5 +37,5 @@ public class AuthController {
 //    public ResponseEntity<> refresh() {
 //
 //    }
-
-}
+//
+//}
