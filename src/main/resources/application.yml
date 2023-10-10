@@ -1,9 +1,7 @@
 spring:
     datasource:
        driver-class-name: org.postgresql.Driver
-       url: ${DB_URL}
-       username: ${DB_USER}
-       password: ${DB_PASSWORD}
+       url: jdbc:postgresql://ep-white-scene-52697809.ap-southeast-1.aws.neon.tech/neondb?user=Umjiseung&password=XECcBLDl54pm
     jpa:
         hibernate:
             dialect: org.hibernate.dialect.PostgreSQLDialect
