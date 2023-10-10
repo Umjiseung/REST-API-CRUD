@@ -4,7 +4,7 @@ spring:
        url: ${DB_URL}
     jpa:
         hibernate:
-            dialect: org.hibernate.dialect.PostgreSQLDialect
+            dialect: org.hibernate.dialect.MySQLDialect
             ddl-auto: update
         properties:
             hibernate:
