@@ -61,8 +61,8 @@ public class BoardService {
 
 
     @Transactional 
-    public void boardUpdate(BoardUpdateRequest boardUpdateRequest) {
-        Board board = boardRepository.findById(boardUpdateRequest.getId()).orElseThrow(IllegalArgumentException::new);
+    public void boardUpdate(BoardUpdateRequest boardUpdateRequest, Long id) {
+        Board board = boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         board.setName(boardUpdateRequest.getName());
         board.setAbout(boardUpdateRequest.getAbout());
         boardRepository.save(board);
